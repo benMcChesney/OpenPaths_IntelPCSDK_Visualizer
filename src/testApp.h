@@ -4,6 +4,7 @@
 #include "LocationPoint.h"
 #include "ofxUI.h"
 #include "ofxSimpleTimer.h"
+#include "ofxTweenzor.h"
 
 class testApp : public ofBaseApp{
 
@@ -23,10 +24,15 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 
+		
+		void loadOpenPathsCSV( ) ; 
+		void offsetCameraTarget ( int indexOffset ) ; 
+
+		//ofEasyCam camera ; 
 		ofEasyCam camera ; 
 
-		void loadOpenPathsCSV( ) ; 
-		
+		float sceneScale ; 
+
 		vector<LocationPoint> locations ;
 		int highlightedLocation ; 
 
@@ -34,12 +40,21 @@ class testApp : public ofBaseApp{
 		void guiEvent(ofxUIEventArgs &e);
 		void setup_ofxUI() ;
 
-
+		float sphereRadius ; 
 		float cameraDistance ; 
 		ofVec3f cameraTarget ; 
 
 		ofxSimpleTimer timelineTimer ; 
 		void timelineTimerComplete ( int &args ) ; 
+
+
+		float dollySpeed ; 
+		float minTargetDistance ; 
+
+
+		ofImage worldMap ; 
+
+		ofPoint locationOffset ; 
 
 
 
