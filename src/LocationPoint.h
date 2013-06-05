@@ -8,12 +8,15 @@ class LocationPoint
 		LocationPoint ( ) { }
 		~LocationPoint ( ) { } 
 
-		void setup ( int _id , float _latitude , float _longitude ) ;
+		void setup ( int _id , float _latitude , float _longitude , ofColor color ) ;
 		void update ( ) ; 
-		void draw ( float rotationAmount ) ; 
+		void draw ( ) ; 
+
+		ofVec3f getGlobalPosition() ; 
 
 		int id ; 
 		float latitude ; 
 		float longitude ; 
+		ofColor debugColor ; 
 
 };

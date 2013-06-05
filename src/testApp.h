@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "LocationPoint.h"
+#include "ofxUI.h"
+#include "ofxSimpleTimer.h"
 
 class testApp : public ofBaseApp{
 
@@ -20,6 +22,25 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
+
+		ofEasyCam camera ; 
+
+		void loadOpenPathsCSV( ) ; 
 		
-		vector<LocationPoint> locations ; 
+		vector<LocationPoint> locations ;
+		int highlightedLocation ; 
+
+		ofxUIScrollableCanvas *gui;   	
+		void guiEvent(ofxUIEventArgs &e);
+		void setup_ofxUI() ;
+
+
+		float cameraDistance ; 
+		ofVec3f cameraTarget ; 
+
+		ofxSimpleTimer timelineTimer ; 
+		void timelineTimerComplete ( int &args ) ; 
+
+
+
 };
