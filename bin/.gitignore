@@ -1,0 +1,13 @@
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+
+.exp
+.dll
+.exe
+.lib
+.pdb
+.ilk
